@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Invoice Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Invoice Generator</h1>
+        <form action="{{ url_for('generate_invoice') }}" method="post">
+            <label for="client_name">Client Name:</label>
+            <input type="text" name="client_name" required>
+
+            <label for="item_name">Item Name:</label>
+            <input type="text" name="item_name" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" name="quantity" required>
+
+            <label for="price">Price:</label>
+            <input type="number" name="price" required>
+
+            <button type="submit">Generate Invoice</button>
+        </form>
+    </div>
+</body>
+</html>
